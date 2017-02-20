@@ -19,7 +19,8 @@ public class UDPEchoClient {
     public static void main(String[] args) {
 
         try {
-            host = InetAddress.getLocalHost();
+            //host = InetAddress.getLocalHost();
+            host = InetAddress.getByName("10.111.176.189"); // Jakses macs' private IP-adresse
         }
         catch(UnknownHostException uhEX){
             System.out.println("Host ID not found!");
