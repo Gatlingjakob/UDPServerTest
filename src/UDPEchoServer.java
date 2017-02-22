@@ -14,6 +14,8 @@ public class UDPEchoServer {
     private static DatagramSocket datagramSocket;
     private static DatagramPacket inPacket, outPacket;
     private static byte[] buffer;
+    private static int alive;
+    private static String[] userList;
 
     public static void main(String[] args) {
 
@@ -49,7 +51,7 @@ public class UDPEchoServer {
 
                  messageIn = new String(inPacket.getData(), 0, inPacket.getLength());
 
-                System.out.println("Message received.");
+                System.out.println("Message received from user "  + "Brugernavn - port - IP-adresse" );
                 numMessages++;
                 messageOut = "Message " + numMessages + ": " + messageIn;
 

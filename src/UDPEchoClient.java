@@ -15,11 +15,12 @@ public class UDPEchoClient {
     private static DatagramSocket datagramSocket;
     private static DatagramPacket inPacket, outPacket;
     private static byte[] buffer;
+    private static int alive;
 
     public static void main(String[] args) {
 
         try {
-            //host = InetAddress.getLocalHost();
+            //host = InetAddress.getLocalHost(); //Bruges kun hvis client tilgås fra samme host-enheden
             host = InetAddress.getByName("10.111.176.189"); // Jakses macs' private IP-adresse
         }
         catch(UnknownHostException uhEX){
